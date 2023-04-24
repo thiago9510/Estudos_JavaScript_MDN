@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            p{
+	           color: rgb(53, 52, 52);           
+            }
+        </style>        
+    </head>
+    <body>
+        <div>
+            <p>Nome: José Ferreira da Silva</p>
+        </div>          
+    </body>    
+    <script>
+        const seleciona = document.querySelector('p');      
+        seleciona.addEventListener('click', alterarnome);
+        function alterarnome (){
+           var nome = prompt('Deigite um nome');
+           seleciona.textContent = 'Nome: ' + nome;    
+           console.log('nome alterado para: ' + nome);          
+        }
+   </script>
+</html>
