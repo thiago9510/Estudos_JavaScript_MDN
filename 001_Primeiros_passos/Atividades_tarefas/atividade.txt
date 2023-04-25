@@ -1,0 +1,9 @@
+1 - Crie um arquivo HTML básico com um botão que, quando clicado, exibe uma mensagem usando JavaScript.
+
+2 - Escreva um script JavaScript que altera a cor de fundo de um elemento HTML quando o mouse passa sobre ele.
+
+3 - Escreva um script JavaScript que solicita ao usuário um número e exibe a tabuada desse número.
+
+4 - Crie uma lista de tarefas em HTML com um campo de entrada de texto e um botão de adicionar. Escreva um script JavaScript que adiciona um novo item à lista quando o botão é clicado.
+
+5 - Escreva um script JavaScript que conta o número de caracteres em um campo de entrada de texto quando o usuário digita. Exiba o número de caracteres em tempo real.
