@@ -1,21 +1,24 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>altera cor</title>  
 </head>
 <body> 
-    </html>
     <div>
-        <P>PASSE O MOUSE AQUI</P>
+        <p>Passe o mouse aqui</p>
     </div>
+    
+    <script>
+        var colors = ["red", "green", "yellow", "orange", "purple", "black"]        
+        const div = document.querySelector('div');
+        div.addEventListener('mouseover', (e) => {
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            e.target.style.color = randomColor;
+            e.target.style.cursor = 'pointer';
+        })
+    </script>
 </body>
-<script>        
-    const button = document.querySelector('div');
-    button.addEventListener('mouseover', (e) => {
-        e.target.style.color = 'red';
-        e.target.setAttribute("class", "teste");
-    })
-</script>
+</html>
