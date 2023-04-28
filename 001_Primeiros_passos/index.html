@@ -4,26 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Some 2 Números</title>
 </head>
-<body>
-    <button>Aperte-me</button>
-    <script>
-        const button = document.querySelector('button')
-        
-        button.addEventListener('click',()=>{
-            const nome = prompt('qual seu nome?');
-            alert ('ola '+ nome + ' é um Prazer te ver!');
-        })
-    </script>
-    <script>
-        function thiago(){
-            let xx = 'sou uma let';
+<style>
+    .button{
+        height: 30px;
+        width: 50px;
+    }
+    #visor {
+        border: 1px solid black;
+        top: 0;
+        left: 0;
+        width: 100%;        
+        font-size: 2em;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+</style>
+<body>    
+    <div>
+        <div>
+            <table>
+                <tr>
+                    <td colspan="5">
+                        <div id="visor"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" class ="button" id="teclaColcheteEsquerda" value="("></td>
+                    <td><input type="button" class ="button" id="teclaColcheteDireita" value=")"></td>
+                    <td><input type="button" class ="button" id="tecla%" value="%"></td>
+                    <td><input type="button" class ="button" id="operadorAC" value="AC"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class ="button" id="tecla7" value="7"></td>
+                    <td><input type="button" class ="button" id="tecla8" value="8"></td>
+                    <td><input type="button" class ="button" id="tecla9" value="9"></td>
+                    <td><input type="button" class ="button" id="operadordividir" value="/"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class ="button" id="tecla4" value="4"></td>
+                    <td><input type="button" class ="button" id="tecla5" value="5"></td>
+                    <td><input type="button" class ="button" id="tecla6" value="6"></td>
+                    <td><input type="button" class ="button" id="operadorx" value="x"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class ="button" id="tecla1" value="1"></td>
+                    <td><input type="button" class ="button" id="tecla2" value="2"></td>
+                    <td><input type="button" class ="button" id="tecla3" value="3"></td>
+                    <td><input type="button" class ="button" id="operador-" value="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class ="button" id="tecla0" value="0"></td>
+                    <td><input type="button" class ="button" id="tecla." value=","></td>
+                    <td><input type="button" class ="button" id="operador=" value="="></td>
+                    <td><input type="button" class ="button" id="operador+" value="+"></td>
+                </tr>
+            </table>
+        </div>
+    </div>   
+    
 
-            if(console.log(xx)){
+    <script>        
 
+        let display = document.querySelector('#visor')
+        let teclas = document.querySelectorAll('[id*=tecla]');
+        let operadores = document.querySelectorAll('[id*=operador]');
+
+        let novoNumero = true;
+        let operador;
+        let numeroAnterior;
+
+        let atualizarDisplay = (texto) => {
+            if(novoNumero){
+                display.textContent = texto;
+                novoNumero = false
+            }else{
+                display.textContent += texto;
+                console.log(texto)
             }
+            
         }
+
+        let inserirNumero = (evento) => atualizarDisplay(evento.target.value);  
+        teclas.forEach(tecla => tecla.addEventListener('click', inserirNumero));
+        
+        
+      
+        
     </script>
+
+    
 </body>
 </html>
